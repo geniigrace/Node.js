@@ -1,3 +1,6 @@
+//동기화 : 실행순서대로 출력
+
+
 const fs = require('fs');
 
 console.log('시작');
