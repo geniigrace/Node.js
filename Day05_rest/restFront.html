@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <title>RESTful Server</title>
+    <link rel="stylesheet" href="./Day05_rest/restFront.css">
+
+</head>
+
+<body>
+    <nav>
+        <a href="/" id="menu">Home</a>
+        <a href="./Day05_rest/about.html" id="menu">About</a>
+    </nav>
+    <div>
+        <form id="form">
+            <input type="text" id="username">
+            <button type="submit">등록</button>
+        </form>
+    </div>
+    <div id="list"></div>
+    <!--이 예제에서는 axios 를 사용한다 (Spring 에서는 제이쿼리를 사용)-->
+    <!--axios import-->
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="./Day05_rest/restFront.js"></script>
+</body>
+
+</html>
