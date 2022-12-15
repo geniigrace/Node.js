@@ -54,30 +54,34 @@ const upload = multer({
       const ext = path.extname(file.originalname);
       done(null, path.basename(file.originalname, ext) + Date.now() + ext);
     },
-  }),
-  limits: { fileSize: 5 * 1024 * 1024 },
-});
-  app.get('/upload', (req, res) => {
-    res.sendFile(path.join(__dirname, 'multipart.html'));
+    }),
+    limits: { fileSize: 5 * 1024 * 1024 },
   });
-  app.post('/upload',upload.fields([{name : 'image1'},{name : 'image2'}]) ,(req, res) => {
+
+  //경로가 /upload 로 잡혀있기 때문에 localhost:3000 에서는 따로 화면출력되지 않음 
+    app.get('/upload', (req, res) => {
+    res.sendFile(path.join(__dirname, 'multipart.html'));
+     });
+
+    app.post('/upload',upload.fields([{name : 'image1'},{name : 'image2'}]) ,(req, res) => {
     console.log(req.files, req.body);
     res.send('ok');
-  });
+    });
   
   
-  app.get('/', (req, res, next) => {
+    app.get('/', (req, res, next) => {
     console.log('GET / 요청에서만 실행됩니다.');
     next();
-  }, (req, res) => {
+    }, (req, res) => {
     throw new Error('에러는 에러 처리 미들웨어로 갑니다.')
-  });
-  app.use((err, req, res, next) => {
+     });
+     
+   app.use((err, req, res, next) => {
     console.error(err);
     res.status(500).send(err.message);
-  });
+   });
   
-  app.listen(app.get('port'), () => {
+    app.listen(app.get('port'), () => {
     console.log(app.get('port'), '번 포트에서 대기 중');
-  });
+    });
   
