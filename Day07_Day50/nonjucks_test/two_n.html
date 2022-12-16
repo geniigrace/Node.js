@@ -1,8 +1,15 @@
-<!--넌적스 반복문 형태-->
-
+<!--반복문 예제 1. 넌적스 형태-->
 <ul>
     {% set fruits = ['사과','배','오렌지','바나나','딸기'] %}
     {% for item in fruits %}
     <li>{{item}}</li>
+    {% endfor %}
+</ul>
+
+<!--반복문 예제 2. 넌적스 형태-->
+<ul>
+    {% set fruits = ['사과','배','오렌지','바나나','딸기'] %}
+    {% for item in fruits %}
+    <li>{{loop.index}}번째 {{item}}</li>
     {% endfor %}
 </ul>

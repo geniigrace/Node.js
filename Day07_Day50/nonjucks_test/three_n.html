@@ -1,9 +1,15 @@
+<!--if문 예제 1-->
 {% if isLoggedIn %}
 <div>로그인되었습니다.</div>
 {% else %}
 <div>로그인이 필요합니다.</div>
 {% endif %}
 
+<!--예제 1의 또 다른 방법-->
+<div>{{'로그인되었습니다.' if isLoggedIn else '로그인이 필요합니다.'}}</div>
+
+
+<!--i문 예제2-->
 {% if fruit === 'apple' %}
 <p>사과입니다.</p>
 {% elif fruit === 'banana' %}
