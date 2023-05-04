@@ -14,4 +14,6 @@ var candyMachine={
 
     const{ getCandy, status:{count} } = candyMachine;
 
+
     
+    console.log(candyMachine);
